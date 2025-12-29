@@ -2,24 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Labour Code 2025 Salary Calculator | In-Hand Salary Impact India</title>
+    <title>Labour Code 2025 Salary Calculator | In-Hand Salary After New Labour Law</title>
 
     <meta name="description"
-        content="Calculate your in-hand salary impact under India's Labour Code 2025. Compare old vs new salary, PF increase, and allowance restructuring instantly." />
+        content="Labour Code 2025 salary calculator for India. Calculate in-hand salary, PF on 50% basic salary, allowance impact and why salary reduces after new labour law." />
+
     <meta name="keywords"
-        content="Labour Code 2025 salary calculator, in hand salary labour code, PF impact calculator, basic salary 50 percent rule" />
+        content="labour code 2025 salary calculator, in hand salary after labour code, pf calculation new labour law, 50 percent basic salary rule, salary structure india 2025, pf deduction increase reason" />
+
     <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <rect width='100' height='100' rx='20' fill='%2338bdf8'/>
+    <text x='50%' y='60%' text-anchor='middle' font-size='50' fill='white'>₹</text>
+    </svg>">
 
     <style>
         :root {
-            --bg-dark: #020617;
-            --bg-grad-1: #0f172a;
+            --bg: linear-gradient(135deg, #0f172a, #020617);
+            --card: #020617;
+            --text: #e5e7eb;
             --border: #1e293b;
             --accent: #38bdf8;
             --danger: #f87171;
+        }
+
+        .light {
+            --bg: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            --card: #ffffff;
+            --text: #020617;
+            --border: #cbd5f5;
+            --accent: #2563eb;
+            --danger: #dc2626;
         }
 
         * {
@@ -28,84 +46,75 @@
 
         body {
             margin: 0;
-            font-family: Inter, system-ui, sans-serif;
-            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-dark));
-            color: #e5e7eb;
+            font-family: system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             padding: 24px;
-        }
-
-        main {
-            width: 100%;
-            display: flex;
-            justify-content: center;
         }
 
         .card {
             width: 100%;
-            max-width: 520px;
-            background: var(--bg-dark);
-            border-radius: 18px;
+            max-width: 540px;
+            background: var(--card);
+            border-radius: 20px;
             padding: 28px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
         }
 
         h1 {
-            font-size: clamp(18px, 4vw, 22px);
-            margin-bottom: 22px;
-            text-align: center;
+            font-size: 20px;
+            margin: 0;
         }
 
         h2 {
             font-size: 14px;
-            margin: 20px 0 12px;
-            opacity: 0.8;
+            margin: 18px 0 10px;
+            opacity: .8;
         }
 
         .field {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         label {
-            font-size: 14px;
             flex: 1;
         }
 
         input {
-            width: 160px;
-            max-width: 100%;
+            width: 170px;
             padding: 8px 10px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
             border-radius: 8px;
-            color: #e5e7eb;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
             text-align: right;
-            font-size: 14px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--border);
-            margin: 22px 0;
         }
 
         .result {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 15px;
+            margin-bottom: 8px;
         }
 
         .highlight {
@@ -118,133 +127,120 @@
             font-weight: 600;
         }
 
-        .footer {
-            margin-top: 18px;
-            font-size: 12px;
-            opacity: 0.6;
-            text-align: center;
+        .explain {
+            margin-top: 12px;
+            font-size: 13px;
+            opacity: .8;
         }
 
-        /* 📱 Small screens */
-        @media (max-width: 480px) {
-            .card {
-                padding: 22px 18px;
-            }
-
+        @media(max-width:480px) {
             .field {
                 flex-direction: column;
-                align-items: stretch;
-            }
-
-            label {
-                font-size: 13px;
             }
 
             input {
                 width: 100%;
                 text-align: left;
             }
-
-            .result {
-                font-size: 14px;
-            }
-        }
-
-        /* 🖥️ Large screens */
-        @media (min-width: 1200px) {
-            .card {
-                max-width: 560px;
-            }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <section class="card">
-            <h1>Labour Code 2025 Salary Impact</h1>
+    <div class="card">
+        <div class="header">
+            <h1>Labour Code 2025 – Salary Impact</h1>
+            <button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+        </div>
 
-            <h2>Salary Components</h2>
-            <div class="field"><label>Basic Salary</label><input id="basic" value="0"></div>
-            <div class="field"><label>HRA</label><input id="hra" value="0"></div>
+        <h2>Salary Components</h2>
+        <div class="field"><label>Basic Salary</label><input class="salary-input" id="basic" value="0"></div>
+        <div class="field"><label>HRA</label><input class="salary-input" id="hra" value="0"></div>
 
-            <h2>Allowances</h2>
-            <div class="field"><label>LTA</label><input class="allowance" value="0"></div>
-            <div class="field"><label>Mobile / Internet</label><input class="allowance" value="0"></div>
-            <div class="field"><label>Special Allowance</label><input class="allowance" value="0"></div>
-            <div class="field"><label>Other Allowance</label><input class="allowance" value="0"></div>
-            <div class="field"><label>Additional Allowance</label><input class="allowance" value="0"></div>
+        <h2>Allowances</h2>
+        <div class="field"><label>LTA</label><input class="salary-input allowance" value="0"></div>
+        <div class="field"><label>Mobile / Internet</label><input class="salary-input allowance" value="0"></div>
+        <div class="field"><label>Other Allowances</label><input class="salary-input allowance" value="0"></div>
 
-            <h2>Deductions</h2>
-            <div class="field"><label>PF (Current)</label><input id="pfOld" value="0"></div>
-            <div class="field"><label>Professional Tax</label><input id="pt" value="0"></div>
-            <div class="field"><label>Income Tax</label><input id="tax" value="0"></div>
+        <h2>Deductions</h2>
+        <div class="field"><label>PF (Current)</label><input class="salary-input" id="pfOld" value="0"></div>
+        <div class="field"><label>Professional Tax</label><input class="salary-input" id="pt" value="0"></div>
+        <div class="field"><label>Income Tax</label><input class="salary-input" id="tax" value="0"></div>
 
-            <div class="divider"></div>
+        <hr>
 
-            <div class="result">
-                <span>Gross Salary</span>
-                <span class="highlight" id="gross">₹0</span>
-            </div>
+        <div class="result"><span>Total Salary (Gross)</span><span class="highlight" id="gross">₹0</span></div>
+        <div class="result"><span>Total Allowances</span><span id="allowancesTotal">₹0</span></div>
+        <div class="result"><span>New Basic (50%)</span><span id="newBasic">₹0</span></div>
+        <div class="result"><span>PF on 50%</span><span id="pfNew">₹0</span></div>
+        <div class="result"><span>Current In-hand</span><span id="oldInhand">₹0</span></div>
+        <div class="result"><span>New In-hand</span><span class="negative" id="newInhand">₹0</span></div>
 
-            <div class="result">
-                <span>Current In-hand</span>
-                <span id="oldInhand">₹0</span>
-            </div>
-
-            <div class="result">
-                <span>New In-hand</span>
-                <span id="newInhand">₹0</span>
-            </div>
-
-            <div class="result">
-                <span>Monthly Impact</span>
-                <span class="negative" id="impact">₹0</span>
-            </div>
-
-            <div class="footer">
-                50% basic rule • PF @ 12% • Tax unchanged
-            </div>
-
-            <!-- SEO helper -->
-            <p style="display:none">
-                Labour Code 2025 salary calculator India. PF impact, basic salary restructuring,
-                allowance breakup and in-hand salary comparison.
-            </p>
-        </section>
-    </main>
+        <div class="explain">
+            📌 Under the new Labour Code, Basic Salary must be at least <b>50%</b> of total salary.
+            Since PF is calculated as <b>12% of Basic</b>, the PF deduction increases, reducing in-hand pay.
+        </div>
+    </div>
 
     <script>
-        function calc() {
-            const n = el => Number(el.value) || 0;
+        const fmt = n => `₹${Number(n).toLocaleString("en-IN", { maximumFractionDigits: 2 })}`;
+        const inputs = Array.from(document.querySelectorAll(".salary-input"));
 
-            const basic = n(document.getElementById("basic"));
-            const hra = n(document.getElementById("hra"));
+        function val(id) { return Number(document.getElementById(id).value) || 0; }
 
-            let allowances = 0;
-            document.querySelectorAll(".allowance").forEach(a => allowances += n(a));
-
-            const pfOld = n(document.getElementById("pfOld"));
-            const pt = n(document.getElementById("pt"));
-            const tax = n(document.getElementById("tax"));
-
-            const gross = basic + hra + allowances;
-            const oldInhand = gross - (pfOld + pt + tax);
-
-            const newBasic = gross * 0.5;
-            const newPf = newBasic * 0.12;
-            const newInhand = gross - (newPf + pt + tax);
-
-            document.getElementById("gross").textContent = `₹${gross.toLocaleString()}`;
-            document.getElementById("oldInhand").textContent = `₹${oldInhand.toLocaleString()}`;
-            document.getElementById("newInhand").textContent = `₹${newInhand.toLocaleString()}`;
-            document.getElementById("impact").textContent =
-                `₹${(newInhand - oldInhand).toLocaleString()}`;
+        function allowanceSum() {
+            return Array.from(document.querySelectorAll(".allowance"))
+                .reduce((s, a) => s + (Number(a.value) || 0), 0);
         }
 
-        document.querySelectorAll("input").forEach(i =>
-            i.addEventListener("input", calc)
-        );
+        function calc() {
+            const basic = val("basic");
+            const hra = val("hra");
+            const allowances = allowanceSum();
+
+            const gross = basic + hra + allowances;
+            const newBasic = gross * 0.5;
+            const pfNew = newBasic * 0.12;
+
+            const oldInhand = gross - (val("pfOld") + val("pt") + val("tax"));
+            const newInhand = gross - (pfNew + val("pt") + val("tax"));
+
+            grossEl.textContent = fmt(gross);
+            allowancesEl.textContent = fmt(allowances);
+            newBasicEl.textContent = fmt(newBasic);
+            pfNewEl.textContent = fmt(pfNew);
+            oldEl.textContent = fmt(oldInhand);
+            newEl.textContent = fmt(newInhand);
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("light");
+            localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
+        }
+
+        if (localStorage.getItem("mode") === "light") {
+            document.body.classList.add("light");
+        }
+
+        /* ENTER → NEXT INPUT */
+        inputs.forEach((input, i) => {
+            input.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    const next = inputs[i + 1];
+                    if (next) next.focus();
+                }
+            });
+        });
+
+        const grossEl = document.getElementById("gross");
+        const allowancesEl = document.getElementById("allowancesTotal");
+        const newBasicEl = document.getElementById("newBasic");
+        const pfNewEl = document.getElementById("pfNew");
+        const oldEl = document.getElementById("oldInhand");
+        const newEl = document.getElementById("newInhand");
+
+        inputs.forEach(i => i.addEventListener("input", calc));
         calc();
     </script>
 </body>
